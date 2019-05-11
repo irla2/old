@@ -1,8 +1,8 @@
 {
    "variables":{
     
-        "aws_access_key": "AKIAT3Q45GLTL3REBWAT",
-        "aws_secret_key": "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"
+        "aws_access_key": "AKIAT3Q45GLTC4LQ7MRP",
+        "aws_secret_key": "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"
     },
 
     "builders": [
@@ -11,7 +11,7 @@
             "access_key": "{{user `aws_access_key`}}",
             "secret_key": "{{user `aws_secret_key`}}",
             "region": "us-east-2",
-            "source_ami": "ami-30a99955",
+            "source_ami": "ami-0c55b159cbfafe1f0",
             "instance_type": "t2.micro", 
             "ssh_username": "ubuntu",
             "ami_name": "packerimage"               
@@ -26,6 +26,3 @@
         }
     ]
 }
-
-
-            
