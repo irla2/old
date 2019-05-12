@@ -1,28 +1,37 @@
 {
-   "variables":{
-    
+    "variables": {
         "aws_access_key": "AKIAT3Q45GLTC4LQ7MRP",
         "aws_secret_key": "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"
     },
-
     "builders": [
         {
-            "type": "amazon-ebs",
+            "type": "amazon-ebsvolume",
             "access_key": "{{user `aws_access_key`}}",
             "secret_key": "{{user `aws_secret_key`}}",
             "region": "us-east-2",
             "source_ami": "ami-0c55b159cbfafe1f0",
-            "instance_type": "t2.micro", 
+            "instance_type": "t2.micro",
             "ssh_username": "ubuntu",
-            "ami_name": "packerimage"               
+            "ami_name": "packerbuiler",
+            "ami_block_device_mappings": [
+                {
+                    "volume_type": "gp2",
+                    "device_name": "/dev/xvdf",
+                    "volume_size": 10,
+                    "delete_on_termination": true
+
+                }
+            ]
         }
     ],
-    "provisioners": [{
-        "type": "shell",
-        "inline": ["sudo apt update ",
-                   "sudo apt install git -y",
-                   "sudo apt install tree -y"]
-
+    "provisioners": [
+        {
+            "type": "shell",
+            "inline": [
+                "sudo apt update ",
+                "sudo apt install git -y",
+                "sudo apt install tree -y"
+            ]
         }
     ]
 }

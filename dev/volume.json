@@ -1,0 +1,22 @@
+{
+    "builders": [
+        {
+            "type": "amazon-ebs",
+            "access_key": "AKIAT3Q45GLTEGLD7VMV",
+            "secret_key": "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",
+            "region": "us-east-2",
+            "source_ami": "ami-0c55b159cbfafe1f0",
+            "instance_type": "t2.micro",
+            "ssh_username": "ubuntu",
+            "ami_name": "packer-quick-start {{timestamp}}",
+            "launch_block_device_mappings": [
+                {
+                    "device_name": "/dev/xvdf",
+                    "volume_size": 15,
+                    "volume_type": "gp2",
+                    "delete_on_termination": true
+                }
+            ]
+        }
+    ]
+}
