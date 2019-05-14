@@ -1,8 +1,7 @@
 {
     "access":"",
-    "secret":"",
-    "ami_name":"testing {{timestamp}}"
-}
+    "secret":"",    
+    "instance_type":"t2.micro",
+    "region":"us-east-2"
+},
 
-## to builed packer command is 
-### packer build -var-file <var.json file> <json file >
