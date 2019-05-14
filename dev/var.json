@@ -1,0 +1,8 @@
+{
+    "access":"",
+    "secret":"",
+    "ami_name":"testing {{timestamp}}"
+}
+
+## to builed packer command is 
+### packer build -var-file <var.json file> <json file >
